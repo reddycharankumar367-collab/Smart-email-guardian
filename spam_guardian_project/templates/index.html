@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Guardian</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📧 Gmail Spam Guardian</h1>
+    <form method="POST">
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <input type="password" name="password" placeholder="App Password" required>
+        <button type="submit">Scan Inbox</button>
+    </form>
+
+    <table>
+        <tr><th>Subject</th><th>Status</th></tr>
+        {% for subject, status in results %}
+        <tr>
+            <td>{{ subject }}</td>
+            <td>{{ status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
